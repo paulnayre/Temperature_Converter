@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="index.css">
+  <title>Nayre converter</title>
+</head>
+<script>
+    function logout(){
+        let response = confirm("Are you sure you want to log out?");
+        if (response){
+            window.close();
+            window.open('index.html');
+        }
+    }
+
+    function convertCelsiusToFahrenheit() {
+        let celsiusInput = document.getElementById('celsius');
+        let celsiusToFahrenheitResult = document.getElementById('celsiusToFahrenheitResult');
+
+        let celsius = parseFloat(celsiusInput.value);
+
+        if (isNaN(celsius)) {
+            celsiusToFahrenheitResult.textContent = 'Input is invalid. Please try again.';
+            return;
+        }
+
+        let fahrenheit = (celsius * 9/5) + 32;
+
+        celsiusToFahrenheitResult.textContent = `Fahrenheit: ${fahrenheit.toFixed(2)}°F`;
+    }
+
+    function convertFahrenheitToCelsius() {
+        let fahrenheitInput = document.getElementById('fahrenheit');
+        let fahrenheitToCelsiusResult = document.getElementById('fahrenheitToCelsiusResult');
+
+        let fahrenheit = parseFloat(fahrenheitInput.value);
+
+        if (isNaN(fahrenheit)) {
+            fahrenheitToCelsiusResult.textContent = 'Input is invalid. Please try again.';
+            return;
+        }
+
+        let celsius = (fahrenheit - 32) * 5/9;
+
+        fahrenheitToCelsiusResult.textContent = `Celsius: ${celsius.toFixed(2)}°C`;
+    }
+</script>
+<body>
+    <section>
+        <div class="form-box">
+            <div class="form-value">
+                <form action="">
+                    <h2>Temperature Converter</h2>
+                    <div class="converter">
+                        <div class="inputbox">
+                            <input type="number" id="celsius" required>
+                            <label for="">Celsius</label>
+                        </div>
+                        <div class="result" id="celsiusToFahrenheitResult"></div>
+                        <button type="button" onclick="convertCelsiusToFahrenheit()">Convert to Fahrenheit</button>
+                    </div>
+                    <div class="converter">
+                        <div class="inputbox">
+                            <input type="number" id="fahrenheit" required>
+                            <label for="">Fahrenheit</label>
+                        </div>
+                        <div class="result" id="fahrenheitToCelsiusResult"></div>
+                        <button type="button" onclick="convertFahrenheitToCelsius()">Convert to Celsius</button>
+                    </div>
+                    <button type="button" onclick="logout()">Log out</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
+}
+</script>
+<body>
+    <section>
+        <div class="form-box">
+            <div class="form-value">
+                <form action="">
+                    <h2>Calculator</h2>
+                    <div class="inputbox">
+                        <input type="number" id="num1" required>
+                        <label for="">Number 1</label>
+                    </div>
+                    <div class="inputbox">
+                        <input type="number" id="num2" required>
+                        <label for="">Number 2</label>
+                    </div>
+                    <div class="result" id="result"></div>
+                    <div class="operations">
+                        <button type="button" onclick="performCalculation('add')">Add</button>
+                        <button type="button" onclick="performCalculation('subtract')">Subtract</button>
+                        <button type="button" onclick="performCalculation('multiply')">Multiply</button>
+                    </div>
+                    <div class="forget">
+                        <label for=""><a href="#">   </a></label>
+                    </div>
+                    <button type="button" onclick="logout()">Log out</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
